@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title id="titulo">
+      Cadastrar
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-item>
+      <ion-input label="Tipo" placeholder="Insira o nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Marca" type="string" placeholder="Insira o email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Modelo" type="number" placeholder="Insira o telefone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Definições" type="number" placeholder="Insira o telefone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Potência" type="number" placeholder="Insira o telefone"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click) = "register()">Cadastrar</ion-button>
+</ion-content>
+
