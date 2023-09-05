@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Part } from 'src/app/model/entities/Part';
+import { Part } from 'src/app/model/entities/part';
+
 import { PartsService } from 'src/app/model/services/parts.service';
 
 @Component({
