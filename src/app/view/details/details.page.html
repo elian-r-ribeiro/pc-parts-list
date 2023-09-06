@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input label="Tipo" type="string" [(ngModel)]="type" placeholder="Insira o tipo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Marca" type="string" [(ngModel)]="brand" placeholder="Insira a marca"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Modelo" type="string" [(ngModel)]="model" placeholder="Insira o modelo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Definições" type="string" [(ngModel)]="definitions" placeholder="Insira as especificações"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Potência" type="string" [(ngModel)]="power" placeholder="Insira a potência"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click) = "editPart()" color="success">Salvar</ion-button>
+  <ion-button expand="full" (click) = "confirmDelete()" color="danger">Deletar</ion-button>
+</ion-content>

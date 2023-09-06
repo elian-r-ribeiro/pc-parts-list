@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { Part } from 'src/app/model/entities/part';
 import { PartsService } from 'src/app/model/services/parts.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class RegisterPage implements OnInit {
   public definitions! : string;
   public power! : string;
 
-  constructor(private alertController: AlertController, private partsService : PartsService, private router : Router){}
+  constructor(private partsService : PartsService, private router : Router){}
 
   ngOnInit() {
   }
@@ -23,23 +23,14 @@ export class RegisterPage implements OnInit {
   register(){
     if(this.type && this.brand && this.model && this.definitions && this.power){
       if(this.brand.length >= 5 && this.model.length >= 5 && this.definitions.length >= 5){
-        
+        let new_part = new Part(this.type, this.brand, this. model, this.definitions, this.power);
+        this.partsService.registerPart(new_part)
+        this.router.navigate(["/home"])
       }else{
-        this.presentAlert('Erro!', 'Todos os campos devem conter no mínimo cinco caracteres!')
+        this.partsService.presentAlert('Erro!', 'Todos os campos devem conter no mínimo cinco caracteres e estarem selecionados!')
       }
     }else{
-      this.presentAlert('Erro!', 'Todos os campos são obrigatórios!');
+      this.partsService.presentAlert('Erro!', 'Todos os campos são obrigatórios!');
     }
-  }
-
-  async presentAlert(subHeader : string, message : string) {
-    const alert = await this.alertController.create({
-      header: 'Parts list',
-      subHeader: subHeader,
-      message: message,
-      buttons: ['OK'],
-    });
-
-    await alert.present();
   }
 }

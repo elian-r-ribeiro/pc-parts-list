@@ -9,9 +9,10 @@
   
   <ion-list *ngFor="let part of this.listOfParts; let i = index">
     <ion-item>
-      <ion-label>{{part.brand}} {{part.model}}</ion-label>
+      <ion-label (click)="goToDetails(i)">{{part.brand}} {{part.model}}</ion-label>
     </ion-item>
   </ion-list>
+
   <ion-fab horizontal="end" vertical="bottom">
     <ion-fab-button (click)="goToRegister()">
       <ion-icon name="add"></ion-icon>

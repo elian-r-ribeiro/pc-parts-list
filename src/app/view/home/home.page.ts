@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Part } from 'src/app/model/entities/part';
-
 import { PartsService } from 'src/app/model/services/parts.service';
 
 @Component({
@@ -17,6 +16,10 @@ export class HomePage {
 
   goToRegister(){
     this.router.navigate(["/register"]);
+  }
+
+  goToDetails(index : number){
+    this.router.navigate(["/details", index])
   }
 
 }

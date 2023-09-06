@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title id="titulo">
       Cadastrar
@@ -6,25 +6,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
     <ion-item>
-      <ion-input label="Tipo" placeholder="Insira o nome"></ion-input>
+      <ion-input label="Tipo" type="string" [(ngModel)]="type" placeholder="Insira o tipo"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="Marca" type="string" placeholder="Insira o email"></ion-input>
+      <ion-input label="Marca" type="string" [(ngModel)]="brand" placeholder="Insira a marca"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="Modelo" type="string" placeholder="Insira o telefone"></ion-input>
+      <ion-input label="Modelo" type="string" [(ngModel)]="model" placeholder="Insira o modelo"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="Definições" type="string" placeholder="Insira o telefone"></ion-input>
+      <ion-input label="Definições" type="string" [(ngModel)]="definitions" placeholder="Insira as especificações"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input label="Potência" type="string" placeholder="Insira o telefone"></ion-input>
+      <ion-input label="Potência" type="string" [(ngModel)]="power" placeholder="Insira a potência"></ion-input>
     </ion-item>
 
     <ion-button expand="full" (click) = "register()">Cadastrar</ion-button>
