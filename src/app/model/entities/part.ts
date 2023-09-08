@@ -1,22 +1,20 @@
 export class Part {
-    private _type: string;
+    private _type: number;
     private _brand: string;
     private _model: string;
-    private _definitions: string;
-    private _power: string;
+    private _definitions!: string;
+    private _power!: number;
 
-    constructor(type : string, brand : string, model : string, definitions : string, power: string){
+    constructor(type : number, brand : string, model : string){
         this._type = type;
         this._brand = brand;
         this._model = model;
-        this._definitions = definitions;
-        this._power = power;
     }
 
-    public get type(): string {
+    public get type(): number {
         return this._type;
     }
-    public set type(type: string) {
+    public set type(type: number) {
         this._type = type;
     }
 
@@ -41,10 +39,10 @@ export class Part {
         this._definitions = definitions;
     }
 
-    public get power(): string {
+    public get power(): number {
         return this._power;
     }
-    public set power(power: string) {
+    public set power(power: number) {
         this._power = power;
     }
 }

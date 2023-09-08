@@ -21,5 +21,4 @@ export class HomePage {
   goToDetails(index : number){
     this.router.navigate(["/details", index])
   }
-
 }

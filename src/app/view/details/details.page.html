@@ -1,12 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Details</ion-title>
+    <ion-icon (click)="goBackPage()" class="back-icon" name="caret-back-outline"></ion-icon>
+    <ion-title>Detalhes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-item>
-    <ion-input label="Tipo" type="string" [(ngModel)]="type" placeholder="Insira o tipo"></ion-input>
+    <ion-select label="Tipo" placeholder="Selecione o Tipo" [(ngModel)]="type">
+      <ion-select-option value="0">Fonte de alimentação</ion-select-option>
+      <ion-select-option value="1">Placa mãe</ion-select-option>
+      <ion-select-option value="2">Processador</ion-select-option>
+      <ion-select-option value="3">Cooler</ion-select-option>
+      <ion-select-option value="4">Placa de vídeo</ion-select-option>
+      <ion-select-option value="5">Memória RAM</ion-select-option>
+      <ion-select-option value="6">HD</ion-select-option>
+      <ion-select-option value="7">SSD</ion-select-option>
+      <ion-select-option value="8">Fan</ion-select-option>
+      <ion-select-option value="9">Gabinete</ion-select-option>
+      <ion-select-option value="10">Acessório</ion-select-option>
+      <ion-select-option value="11">Periférico</ion-select-option>
+      <ion-select-option value="12">Outro</ion-select-option>
+    </ion-select>
   </ion-item>
 
   <ion-item>
@@ -22,7 +37,11 @@
   </ion-item>
 
   <ion-item>
-    <ion-input label="Potência" type="string" [(ngModel)]="power" placeholder="Insira a potência"></ion-input>
+    <ion-select label="Potência" placeholder="Selecione a potência" [(ngModel)]="power">
+      <ion-select-option value="0">Low-end</ion-select-option>
+      <ion-select-option value="1">Mid-end</ion-select-option>
+      <ion-select-option value="2">High-end</ion-select-option>
+    </ion-select>
   </ion-item>
 
   <ion-button expand="full" (click) = "editPart()">Salvar</ion-button>

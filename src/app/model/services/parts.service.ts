@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Part } from '../entities/part';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,7 @@ import { AlertController } from '@ionic/angular';
 export class PartsService {
   public listOfParts : Part[] = [];
 
-  constructor(private alertController: AlertController){
-    let p1 : Part = new Part("Placa de vídeo", "NVidia", "RTX 4090", "CUDA Core 16384", "High-end");
-    let p2 : Part = new Part("Processador", "Intel", "i9-13900KS", "6 GHz", "High-end");
-    this.listOfParts.push(p1);
-    this.listOfParts.push(p2);
-  }
+  constructor(private alertController: AlertController, private router: Router){}
 
   getAllParts(): Part[]{
     return this.listOfParts;
@@ -44,5 +40,9 @@ export class PartsService {
     });
 
     await alert.present();
+  }
+
+  goBackPage(){
+    this.router.navigate(['../'])
   }
 }
